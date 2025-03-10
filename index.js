@@ -23,7 +23,7 @@ async function checkAvailability() {
 
         if (productNames.some(name => {
           const pname = name.replace(/[\.\s]/g, '').toLowerCase();
-          return pname.includes('mkii') or pname.includes('mk2');
+          return pname.includes('mkii') || pname.includes('mk2');
         })) {
             console.log('STECS Mk.II is available!');
             await sendNotification('🚀 The STECS Mk.II throttle is now available! Check it out: ' + url);
