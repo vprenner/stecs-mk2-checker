@@ -1,0 +1,13 @@
+{
+  "name": "stecs-checker",
+  "version": "1.0.0",
+  "description": "Checks if the STECS Mk.II throttle is available and sends a notification.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}
