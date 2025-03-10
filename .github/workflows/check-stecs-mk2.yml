@@ -1,6 +1,7 @@
 name: Check STECS Mk.II Availability
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 8,11,14,17,20 * * *'  # Runs when needed
 
