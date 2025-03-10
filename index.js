@@ -12,6 +12,7 @@ async function sendNotification(message) {
         user: PUSHOVER_USER_KEY,
         message: message,
         title: "STECS Mk.II Alert",
+        
     });
 }
 
@@ -19,10 +20,10 @@ async function checkAvailability() {
     try {
         const { data } = await axios.get(url);
         const $ = cheerio.load(data);
-        const productNames = $('.product-title').map((i, el) => $(el).text()).get();
-
+        const productNames = $('.wc-loop-product-title').map((i, el) => $(el).text()).get();
         if (productNames.some(name => {
-          const pname = name.replace(/[\.\s]/g, '').toLowerCase();
+          const pname = name.replace(/[\s.]/g, '').toLowerCase();
+          console.log(pname);
           return pname.includes('mki') || pname.includes('mk2');
         })) {
             console.log('STECS Mk.II is available!');
